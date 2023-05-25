@@ -1,0 +1,322 @@
+<!DOCTYPE HTML>
+<!--
+	Editorial by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>Portfolio | Andrea May Aguilar</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="assets/css/main.css" />
+</head>
+
+<body class="is-preload">
+
+	<!-- Wrapper -->
+	<div id="wrapper">
+
+		<!-- Main -->
+		<div id="main">
+			<div class="inner">
+
+				<!-- Header -->
+				<header id="header">
+					<a href="index.html" class="logo"><strong>Portfolio</strong> | Andrea May Aguilar</a>
+				</header>
+
+				<!-- Content -->
+				<section>
+					<header class="main">
+						<h1>Telecom Customer Churn &#128225;</h1>
+						<p>An EDA and Dashboard Project inspired by the Maven Churn Challenge</p>
+					</header>
+
+					<p>
+						This data exploration and visualization project is inspired by a <a
+							href="https://www.mavenanalytics.io/blog/maven-churn-challenge" target = "_blank">data challenge</a> I found
+						from Maven Analytics. The dataset provided contains churn data from 7,043 customers from a
+						fictional telecommunications company in California in the second quarter of 2022. Information
+						provided about the customers include their demographics, location, tenure, subscription
+						services, status for the quarter (joined, stayed, or churned), and more.
+					</p>
+					<p>
+						In this scenario challenge, I am tasked to find insights on the following to improve customer
+						retention:
+					</p>
+					<ol>
+						<li><b>Identify high-value customers. </b>In this analysis, I would define customers as
+							“high-value”
+							based on these factors – retention rate, revenue, sales, and number of referrals.</li>
+						<li><b>Identify top reasons for churn. </b>I would explore the customer data based on
+							demographics, customer behavior, and sales to identify which are more likely to contribute
+							to customer churn.</li>
+					</ol>
+
+					<hr class="major" />
+
+					<h2>Data cleaning</h2>
+					<p>The following are some of the major steps I did using Power Query in Microsoft Excel to clean and
+						transform the data:
+					</p>
+					<ul>
+						<li>Added entries to some identified blank cells that can be filled in with values</li>
+						<li>Assigned categorical names for some numerical data such as age, number of dependents,
+							referrals, tenure, and average download consumption using conditional columns</li>
+						<li>Replaced data in columns containing ‘Yes’ or ‘No’ entries into more descriptive names
+							(e.g., subscribed, not subscribed)</li>
+						<li>Separated the dataset into different tables based on demographics, product, account, and
+							churn data using customer ID as a primary key for Tableau visualization</li>
+					</ul>
+					Click <a
+						href="https://drive.google.com/drive/u/0/folders/1C4ZaeMekzvNMSiGAmgJvo5bGzTuoyRWU" target = "_blank">here</a>
+					to access the Excel file.
+
+					<hr class="major" />
+
+					<h2>Data questions</h2>
+					<p>Below are the general questions I would like to find insights on in the analysis of the churn
+						data:</p>
+					<ol>
+						<li>What are the overall customer churn rate, retention rate, and acquisition rate of the
+							telecommunications company?</li>
+						<li>What are the top reasons for customer churn?</li>
+						<li>What factors based on demographics, customer behavior, and sales influence customer churn,
+							retention, and acquisition?</li>
+					</ol>
+					<p>To guide my data exploration and dashboard creation, the following questions about the data are
+						specified:</p>
+					<ol>
+						<li>What is the distribution of customers based on demographic factors?</li>
+						<li>What is the distribution of customers based on product/service subscriptions, marketing
+							offers, and streaming service usage?</li>
+						<li>What is the distribution of customers based on account activity and sales?</li>
+					</ol>
+
+					<hr class="major" />
+
+					<h2>Data visualization</h2>
+					<p>The final Tableau dashboard is shown below. The viewer can hover over the graphs to see more
+						information on churn rate, retention rate, acquisition rate, revenue, tenure, referrals, and
+						more. Legends can also be accessed by hovering over chart titles. The dashboard sections are
+						described as follows:</p>
+					<ul>
+						<li><u>Overview</u> – this section provides a high-level overview of the company’s customer
+							churn,
+							retention and acquisition.</li>
+						<li><u>Customer</u> – this section provides a breakdown of the company’s customer base by
+							demographic
+							factors.</li>
+						<li><u>Product</u> – this section provides an overview of the company’s products and services,
+							including marketing offers, subscriptions, and usage of products and services.</li>
+						<li><u>Account</u> - this section provides an overview of the company’s sales data and
+							customer’s
+							payment and expenditures.</li>
+					</ul></br>
+
+					<div class='tableauPlaceholder' id='viz1684860280197' style='position: relative'>
+						<noscript>
+							<a href='#'>
+								<img alt='overview'
+									src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;FO&#47;FORPORTFOLIOTelecomCustomerChurnAnalysis&#47;overview&#47;1_rss.png'
+									style='border: none' />
+							</a>
+						</noscript>
+						<object class='tableauViz' style='display:none;'>
+							<param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+							<param name='embed_code_version' value='3' />
+							<param name='site_root' value='' />
+							<param name='name' value='FORPORTFOLIOTelecomCustomerChurnAnalysis&#47;overview' />
+							<param name='tabs' value='no' />
+							<param name='toolbar' value='yes' />
+							<param name='static_image'
+								value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;FO&#47;FORPORTFOLIOTelecomCustomerChurnAnalysis&#47;overview&#47;1.png' />
+							<param name='animate_transition' value='yes' />
+							<param name='display_static_image' value='yes' />
+							<param name='display_spinner' value='yes' />
+							<param name='display_overlay' value='yes' />
+							<param name='display_count' value='yes' />
+							<param name='language' value='en-US' />
+						</object>
+					</div>
+					<script type='text/javascript'>
+						var divElement = document.getElementById('viz1684860280197');
+						var vizElement = divElement.getElementsByTagName('object')[0];
+
+						if (divElement.offsetWidth > 800) {
+							vizElement.style.width = '900px';
+							vizElement.style.height = '827px';
+						} else if (divElement.offsetWidth > 500) {
+							vizElement.style.width = '900px';
+							vizElement.style.height = '827px';
+						} else {
+							vizElement.style.width = '100%';
+							vizElement.style.height = '3677px';
+						}
+
+						var scriptElement = document.createElement('script');
+						scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+						vizElement.parentNode.insertBefore(scriptElement, vizElement);
+					</script></br>
+
+					<hr class="major" />
+
+					<h2>Data findings and insights</h2>
+					<b>Customer churn overview</b></br>
+					<ol>
+						<li>Most of the customers did not churn by the end of the second quarter of the year, with a
+							retention rate of 67.02%. Customers in this category contributed an average of $3,735.68 in
+							revenue. On average, retained customers have been with the company for 41 months and
+							referred the company to 3 people.</li>
+						<li>6.45% of the company’s customers are new this quarter and have an average tenure of 2
+							months.</li>
+						<li>Almost a third of the company churned by the end of the quarter, with a churn rate of
+							26.54%. Compared to the customers who stayed, average revenue, tenure, and number of
+							referrals are generally less. Most of the churned customers are low spenders, are newcomers,
+							and have not referred the company to other people.</li>
+						<li>The top reason for churn is preference of customers to competitor. According to 45% of
+							churned customers, the competitor offer better devices, better offers, more data, and higher
+							download speeds.</li>
+					</ol>
+					<b>Customer demographics</b></br>
+					<ol>
+						<li>In terms of age, most of the customers belong to the mid-adulthood age group (36-55 years
+							old).</li>
+						<li>Even though the customer distribution is almost evenly split in terms of civil status,
+							single customers are more likely to churn (17.038%) than married customers.</li>
+						<li>76.90% of the customer base do not have dependents.</li>
+						<li>The city with the highest churn rate is San Diego (2.627%), while the city with the
+							highest retention rate is Los Angeles (2.797%).</li>
+					</ol>
+					<b>Customer subscriptions</b></br>
+					<ol>
+						<li>Phone subscribers comprise of 90.32% of the customers. Internet subscribers are 78.33% of
+							the customer base. 68.65% are subscribed to both phone and internet services.</li>
+						<li>Internet subscription is slightly higher in revenue to phone subscription despite the fact
+							that there are more phone subscribers. Churn rates between both phone and internet
+							subscribers are close to around 24%, with internet subscribers being slightly higher
+							(24.93%).</li>
+						<li>Churn rates for subscribers availing of other subscriptions such as premium tech support,
+							device protection plan, online security, and online backup are generally less compared to
+							customers who are not subscribed.</li>
+					</ol>
+					<b>Customer offers</b></br>
+					<ol>
+						<li>Overall acceptance rate of customers to marketing offers is 44.95%. The most accepted
+							offers are Offer B (11.70%) and Offer E (11.43%), while Offer C is the least accepted
+							(5.892%).</li>
+						<li>Customers who accepted Offer E churned the most with a churn rate of 6.049%.</li>
+						<li>10.266% of customers who accepted Offer B stayed with the company, having the highest
+							retention rate among all the marketing offers.</li>
+					</ol>
+					<b>Customer streaming and data usage</b></br>
+					<ol>
+						<li>The average monthly data download is 20.52 GB, enforcing the fact that most of the
+							customers who are internet subscribers are heavy data users.</li>
+						<li>Majority of internet subscribers are subscribed to unlimited data (67.37%).</li>
+						<li>Customers who use their internet to stream movies and TV have lower churn rates.</li>
+					</ol>
+					<b>Customer account activity and sales</b></br>
+					<ol>
+						<li>The average tenure of customers is 32 months. Overall, customers who have longer tenure
+							like regulars, loyalists, and elite customers churn less compared to newcomers.</li>
+						<li>Likewise, customers who have longer tenure are more inclined to refer the company to other
+							people. The average number of referrals is 2.</li>
+						<li>Customers with shorter contracts like month-to-month basis have higher risk of churning,
+							with a churn rate of 23.50%.</li>
+						<li>Majority of customers are low spenders. These low spenders also churn more compared to
+							customers who pay more for products and other charges.</li>
+					</ol>
+
+					<hr class="major" />
+
+					<h2>Final thoughts</h2>
+					<p>Given the tasks I set myself to do in the beginning of this project, here are my final
+						conclusions about the analysis:</p>
+					<ol>
+						<li><b>High-value customers are those who have been loyal to the company, or those who have
+								longer average tenure. </b>Based from customer behavior and sales data, customers with
+							longer
+							tenure are more likely to spend more on products and services and are more active in
+							referring the company to other people. Customers also churn less the longer their tenure.
+							The company should incentivize customers who have been with them the longest and think of
+							ways to cater their products and services towards them.</li>
+						<li><b>The top reason for churn is because of the company’s competitor/s. </b>Areas of weakness
+							identified by customers are the company’s devices, offers, data, and download speeds. As
+							majority of the customers consume high amounts of data, the company should find ways to
+							improve their internet services. Also, the company should look into subscriptions and offers
+							that have affected their churn and retention. For example, something should be improved
+							about Offer E because of the amount of churn it produced. On the other hand, the company
+							should take note of Offer B because of how it performed well in terms of customer retention.
+						</li>
+					</ol>
+
+				</section>
+
+			</div>
+		</div>
+
+		<!-- Sidebar -->
+		<div id="sidebar">
+			<div class="inner">
+
+				<!-- Section -->
+				<section>
+					<span class="image fit"><img src="images/banner.png" alt="" /></span>
+				</section>
+
+				<!-- Menu -->
+				<nav id="menu">
+					<header class="major">
+						<h2>Menu</h2>
+					</header>
+					<ul>
+						<li><a href="index.html">Home</a></li>
+						<li>
+							<span class="opener">Projects</span>
+							<ul>
+								<li><a href="telecom.html">Telecom Customer Churn</a></li>
+								<li><a href="supply.html">Supply Chain Distribution</a></li>
+								<li><a href="food.html">PH Food Prices</a></li>
+								<li><a href="bellabeat.html">Bellabeat Case Study</a></li>
+							</ul>
+						</li>
+					</ul>
+				</nav>
+
+				<!-- Section -->
+				<section>
+					<header class="major">
+						<h2>Contact Me</h2>
+					</header>
+					<ul class="contact">
+						<li class="icon solid fa-envelope"><a
+								href="mailto:andreamayaguilar@gmail.com">andreamayaguilar@gmail.com</a></li>
+						<li class="icon solid fa-phone">(+63)916-658-0717</li>
+						<li class="icon solid fa-home">Iriga City, Camarines Sur, 4431</li>
+					</ul>
+				</section>
+
+				<!-- Footer -->
+				<footer id="footer">
+					<p class="copyright">&copy; All rights reserved. Design: <a href="https://html5up.net" target = "_blank">HTML5 UP</a>.
+					</p>
+				</footer>
+
+			</div>
+		</div>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/browser.min.js"></script>
+	<script src="assets/js/breakpoints.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
+
+</body>
+
+</html>

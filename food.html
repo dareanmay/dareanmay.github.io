@@ -1,0 +1,282 @@
+<!DOCTYPE HTML>
+<!--
+	Editorial by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>Portfolio | Andrea May Aguilar</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="assets/css/main.css" />
+</head>
+
+<body class="is-preload">
+
+	<!-- Wrapper -->
+	<div id="wrapper">
+
+		<!-- Main -->
+		<div id="main">
+			<div class="inner">
+
+				<!-- Header -->
+				<header id="header">
+					<a href="index.html" class="logo"><strong>Portfolio</strong> | Andrea May Aguilar</a>
+				</header>
+
+				<!-- Content -->
+				<section>
+					<header class="main">
+						<h1>PH Food Prices &#129477;</h1>
+						<p>An Activity from the Bayan Academy Data Analytics Certification</p>
+					</header>
+
+					<p>The purpose of this project is to practice my data cleaning, visualization, and
+						analysis skills gained from the data analytics training provided by Bayan Academy. I intend to
+						gain insights from the data provided by the World Food Programme Price Database which
+						covers foods such as maize, rice, beans, fish, and sugar from 98 countries and some 3000
+						markets.
+					</p>
+					<p>The extracted <a
+							href="https://data.humdata.org/dataset/wfp-food-prices-for-philippines" target = "_blank">dataset</a> from the
+						said database contains basic information about food prices of 66
+						kinds of basic food commodities in the Philippines from 2000 – 2023 across several markets,
+						localities, and regions in the country.
+					</p>
+
+					<hr class="major" />
+
+					<h2>Data cleaning</h2>
+					<p>Below are some of the major steps I did to clean the data using Power Query in Microsoft Excel:</p>
+					<ul>
+						<li>Organized header row and columns</li>
+						<li>Filtered out dates with blank values of food commodity prices and trimmed white spaces</li>
+						<li>Transformed and replaced names and values of some data entries</li>
+						<li>Fixed formatting of names of food commodities through various steps:
+							<ul>
+								<li>split columns by delimiter</li>
+								<li>grouped similar food commodities for simplification</li>
+								<li>renamed unfamiliar names of some food commodities into more common names in Tagalog or English</li>
+							</ul>
+						</li>
+					</ul>
+					Click <a
+						href="https://drive.google.com/drive/u/0/folders/1VuDzKEV_rKLkRveh-lTaJdocCjiQf7gs" target = "_blank">here</a>
+					to access the Excel file.
+
+					<hr class="major" />
+
+					<h2>Data visualization</h2>
+					<p>For the visualization and analysis, data will be limited from the years 2018 – 2022 to provide a
+						more current and relevant overview of the trend and changes in the food prices from recent
+						years. The data was visualized using Tableau, as shown below. The dashboard below shows the
+						overview of trends in food prices in the country for all the food commodities included in the
+						dataset. The dashboard view can be filtered based on what food commodity you want to look at.
+					</p></br>
+
+					<div class='tableauPlaceholder' id='viz1684859051071' style='position: relative'>
+						<noscript>
+							<a href='#'>
+								<img alt='price_dashboard'
+									src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;FO&#47;FORPORTFOLIOTheCostofFoodinthePhilippines&#47;price_dashboard&#47;1_rss.png'
+									style='border: none' />
+							</a>
+						</noscript>
+						<object class='tableauViz' style='display:none;'>
+							<param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+							<param name='embed_code_version' value='3' />
+							<param name='site_root' value='' />
+							<param name='name' value='FORPORTFOLIOTheCostofFoodinthePhilippines&#47;price_dashboard' />
+							<param name='tabs' value='no' />
+							<param name='toolbar' value='yes' />
+							<param name='static_image'
+								value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;FO&#47;FORPORTFOLIOTheCostofFoodinthePhilippines&#47;price_dashboard&#47;1.png' />
+							<param name='animate_transition' value='yes' />
+							<param name='display_static_image' value='yes' />
+							<param name='display_spinner' value='yes' />
+							<param name='display_overlay' value='yes' />
+							<param name='display_count' value='yes' />
+							<param name='language' value='en-US' />
+						</object>
+					</div>
+					<script type='text/javascript'>
+						var divElement = document.getElementById('viz1684859051071');
+						var vizElement = divElement.getElementsByTagName('object')[0];
+
+						if (divElement.offsetWidth > 800) {
+							vizElement.style.width = '900px';
+							vizElement.style.height = '827px';
+						} else if (divElement.offsetWidth > 500) {
+							vizElement.style.width = '900px';
+							vizElement.style.height = '827px';
+						} else {
+							vizElement.style.width = '100%';
+							vizElement.style.height = '1477px';
+						}
+
+						var scriptElement = document.createElement('script');
+						scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+						vizElement.parentNode.insertBefore(scriptElement, vizElement);
+					</script></br></br>
+
+					<hr class="major" />
+
+					<h2>Data exploration</h2>
+					As an example EDA, I would like to explore the functionality of the dashboard by examining the
+					change in food prices for one of the more controversial food commodities that dramatically became
+					more expensive in the country last year – <b>red onions</b>.
+					</p>
+
+					<p>It should be taken note that for most of the food commodities, price is based on a quantity of
+						one kilogram of food. For oil products, quantity is based on 750 mL of the food item. For
+						eggs, average price is based on one piece of egg.
+					</p>
+
+					<hr class="major" />
+
+					<h2>Data questions</h2>
+					<p>Here are a few questions specific to the price of red onions that I would like to gain insights
+						from by the end of this analysis:</p>
+					<ol>
+						<li>How do the average price of red onions commodities vary by locality or region? Which places
+							in
+							the country had the most expensive and cheapest average price for red onions?</li>
+						<li>How do the average price of red onions commodities vary by time? When did the sudden
+							increase of
+							average price of red onions occur? </li>
+						<li>What is the national average price of red onions?</li>
+					</ol>
+
+					<hr class="major" />
+
+					<h2>Data findings and insights</h2>
+
+					<b>Average price of red onions by locality and region</b></br>
+					<ol>
+						<li>Region VIII (Eastern Visayas) recorded the highest average price of one kilo of onions -
+							P153.74, while Region II (Cagayan Valley) had the lowest average price of P117.50.</li>
+						<li>Based on locality, Camiguin from Region X (Northern Mindanao) recorded the highest average
+							price of red onions with P177.88. Palayan, Nueva Ecija from Region III (Central Luzon) had
+							the lowest with P71.98.
+						</li>
+					</ol>
+
+					<b>Average price of red onions by month and year</b></br>
+					<ol>
+						<li>There is a general upward trend for the average price of a kilogram of red onions in the
+							country from 2018-2022.
+						</li>
+						<li>The highest recorded average price for a kilo of red onions is on December 2022, with an
+							all-time high of P306.70. The lowest average price of P64.33 was recorded from May – April
+							2019.
+						</li>
+						<li>The average price for red onions had the most noticeable fluctuations around the end of 2020
+							up to
+							the end of 2022. Around the beginning and end of the year are the points on the line where
+							prices were the highest. The steepest increase is seen by the end of 2022.
+						</li>
+						<li>The average price increased by 43.09% from January 2022 to December 2022.</li>
+					</ol>
+
+					<b>National average price of red onions</b></br>
+					<ol>
+						<li>From 2018-2022, the national average price of red onions is P136.73.</li>
+					</ol>
+
+					<b>Other interesting insights</b></br>
+					<ol>
+						<li>In December 2022, the average price of a kilogram of red onions is more expensive than a
+							kilogram of pork and also more expensive than a kilogram of chicken. The average price of a
+							kilogram of beef is roughly only P50.00 more expensive than a kilogram of red onions.
+						</li>
+						<li>For the price of one kilogram of red onions in December 2022, you can buy almost three and
+							a half kilos of red onions around the same time in 2018.
+						</li>
+						<li>A kilogram of red onions was P381.00 in the markets of Davao De Oro on December 2022,
+							the highest recorded price. In contrast, you can buy the cheapest kilo of red onions for
+							P39.00 in the markets of Palayan, Nueva Ecija on April 2019.
+						</li>
+					</ol>
+
+					<hr class="major" />
+
+					<h2>Final thoughts</h2>
+					<p>Food security and food affordability is critical to quality of life and sustainability. The
+						sudden increase of food commodities, like that of onions last year, is something that should be
+						resolved through the creation of data-driven policies and solutions.
+					</p>
+					<p>The insights that I have provided are just descriptive insights on how prices of red onions have
+						changed. Further data exploration and analysis can be made to see what influences change in food
+						prices that can help predict how prices can change over time.
+					</p>
+
+				</section>
+
+			</div>
+		</div>
+
+		<!-- Sidebar -->
+		<div id="sidebar">
+			<div class="inner">
+
+				<!-- Section -->
+				<section>
+					<span class="image fit"><img src="images/banner.png" alt="" /></span>
+				</section>
+
+				<!-- Menu -->
+				<nav id="menu">
+					<header class="major">
+						<h2>Menu</h2>
+					</header>
+					<ul>
+						<li><a href="index.html">Home</a></li>
+						<li>
+							<span class="opener">Projects</span>
+							<ul>
+								<li><a href="telecom.html">Telecom Customer Churn</a></li>
+								<li><a href="supply.html">Supply Chain Distribution</a></li>
+								<li><a href="food.html">PH Food Prices</a></li>
+								<li><a href="bellabeat.html">Bellabeat Case Study</a></li>
+							</ul>
+						</li>
+					</ul>
+				</nav>
+
+				<!-- Section -->
+				<section>
+					<header class="major">
+						<h2>Contact Me</h2>
+					</header>
+					<ul class="contact">
+						<li class="icon solid fa-envelope"><a
+								href="mailto:andreamayaguilar@gmail.com">andreamayaguilar@gmail.com</a></li>
+						<li class="icon solid fa-phone">(+63)916-658-0717</li>
+						<li class="icon solid fa-home">Iriga City, Camarines Sur, 4431</li>
+					</ul>
+				</section>
+
+				<!-- Footer -->
+				<footer id="footer">
+					<p class="copyright">&copy; All rights reserved. Design: <a href="https://html5up.net" target = "_blank">HTML5 UP</a>.
+					</p>
+				</footer>
+
+			</div>
+		</div>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/browser.min.js"></script>
+	<script src="assets/js/breakpoints.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,560 @@
+<!DOCTYPE HTML>
+<!--
+	Editorial by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+    <title>Portfolio | Andrea May Aguilar</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+</head>
+
+<body class="is-preload">
+
+    <!-- Wrapper -->
+    <div id="wrapper">
+
+        <!-- Main -->
+        <div id="main">
+            <div class="inner">
+
+                <!-- Header -->
+                <header id="header">
+                    <a href="index.html" class="logo"><strong>Portfolio</strong> | Andrea May Aguilar</a>
+                </header>
+
+                <!-- Content -->
+                <section>
+                    <header class="main">
+                        <h1>Bellabeat Case Study &#127939;</h1>
+                        <p>A Capstone Project from the Google Data Analytics Certification</p>
+                    </header>
+
+                    <p>The second case study in the last course of the Google Data Analytics program provides an
+                        opportunity for students to practice the knowledge and skills learned in the program by creating
+                        a data-driven marketing strategy for <a href="bellabeat.com" target = "_blank">Bellabeat</a>, a high-tech
+                        manufacturer of health-focused products for women.</p>
+                    <p>For this case study, I focused on gaining insights on the profile and habits of users of smart
+                        health devices that can influence how they would use one of Bellabeat’s products – the Spring
+                        bottle.</p>
+                    <p>This data analysis is guided by the six steps of the data analysis process: <i>ask, prepare,
+                            process, analyze, share, and act</i>.</p>
+
+                    <hr class="major" />
+
+                    <h2>Scenario</h2>
+                    <p>In this case study, I am a junior data analyst working on the marketing analyst team at
+                        Bellabeat, a high-tech manufacturer of health-focused products for women. Based on the given
+                        scenario, I identified my three main tasks for this data analysis:</p>
+                    <ol>
+                        <li>Focus on one of Bellabeat’s products and analyze smart device data to gain insight into how
+                            consumers are using their smart devices.</li>
+                        <li>Gain insights to help guide marketing strategy for the company.</li>
+                        <li>Present high-level recommendations for Bellabeat’s marketing strategy.</li>
+                    </ol>
+
+                    <hr class="major" />
+
+                    <h2>Product</h2>
+                    <p>The Bellabeat products specified in the given data analysis scenario are the Bellabeat app, the
+                        Leaf wellness tracker, the Time wellness watch, the Spring smart water bottle, and the Bellabeat
+                        membership.</p>
+                    <p>I was tasked to focus on one Bellabeat product. For this analysis, I am interested on the <a
+                            href="https://support.bellabeat.com/hc/en-us/categories/115000738905-Spring" target = "_blank">Bellabeat
+                            Spring water bottle</a>. My goal is to gain insights on the health profile of users to learn
+                        important information on physical activity and water intake.</p>
+
+                    <hr class="major" />
+
+                    <h2>Ask</h2>
+                    <h3>Business task</h3>
+                    <p>As a junior data analyst, I am expected to analyze data on the use of smart health and fitness
+                        devices to provide data-driven insights on how Bellabeat can improve its marketing strategy.</p>
+                    <h3>Key stakeholders</h3>
+                    <p>The following are the key stakeholders considered in the case study:</p>
+                    <ol>
+                        <li><u>Urška Sršen</u>: Bellabeat’s cofounder and Chief Creative Officer</li>
+                        <li><u>Sando Mur</u>: Mathematician and Bellabeat’s cofounder; key member of the Bellabeat
+                            executive team</li>
+                        <li><u>Bellabeat marketing analytics team</u>: A team of data analysts responsible for
+                            collecting, analyzing, and reporting data that helps guide Bellabeat’s marketing strategy.
+                        </li>
+                    </ol>
+
+                    <hr class="major" />
+
+                    <h2>Prepare</h2>
+                    <h3>Data source</h3>
+                    <p>The <a href="https://www.kaggle.com/datasets/arashnic/fitbit" target = "_blank">FitBit Fitness Tracker Data</a>
+                        from Kaggle was recommended by the stakeholders. Despite some limitations, I decided to focus
+                        the data analysis to this dataset for now. The dataset is licensed under the CC0: Public Domain.
+                    </p>
+                    <h3>Data credibility</h3>
+                    <p>The dataset is generated by respondents to a distributed survey via Amazon Mechanical Turk
+                        between 03.12.2016 - 05.12.2016. The survey included 30 respondents, which is the minimum number
+                        of samples to glean reliable findings. However, there is limited information based on important
+                        demographics that is relevant to the analysis. Additional data such as age and gender can
+                        improve the analysis since Bellabeat’s products are focused on women.</p>
+                    <h3>Data organization</h3>
+                    <p>This Kaggle data set contains personal fitness tracker from thirty FitBit users. Thirty eligible
+                        Fitbit users consented to the submission of personal tracker data, including minute-level output
+                        for physical activity, heart rate, and sleep monitoring. It includes information about daily
+                        activity, steps, and heart rate that can be used to explore users’ habits.</p>
+                    <p>The data set contains 18 CSV files. Some files contained merged information from other files
+                        included in the data set. Wide and narrow formats are available for some CSV files. Most files
+                        are categorized based on frequency: minute, hourly, and daily.</p>
+                    <h3>Data sorting and filtering</h3>
+                    <p>For the sake of the data analysis, only relevant data sets are going to be used. It can be
+                        observed that some data sets contain similar and redundant information, so this was also
+                        considered. The following data sets are chosen and will be sorted and filtered out further in
+                        the next stage of the data analysis:</p>
+                    <ol>
+                        <li>weightLogInfo_merged.csv</li>
+                        <li>dailyActivity_merged.csv</li>
+                        <li>hourlyIntensities_merged.csv</li>
+                    </ol>
+
+                    <hr class="major" />
+
+                    <h2>Process</h2>
+                    <h3>RStudio</h3>
+                    <p>The data analysis was done mainly on <b>RStudio</b>.</p>
+                    <h3>Data importation</h3>
+
+                    <b>Load libraries</b></br>
+                    <pre><code>library(tidyverse)
+library(readr)
+library(dplyr)
+library(lubridate)
+library(janitor)
+library(ggplot2)
+library(ggrepel)</code></pre>
+
+                    <b>Import CSV files</b></br>
+                    <pre><code>weight <- read.csv("/kaggle/input/fitbit/Fitabase Data 4.12.16-5.12.16/weightLogInfo_merged.csv")
+daily_activity <- read.csv("/kaggle/input/fitbit/Fitabase Data 4.12.16-5.12.16/dailyActivity_merged.csv")
+hour_intensity <- read.csv("/kaggle/input/fitbit/Fitabase Data 4.12.16-5.12.16/hourlyIntensities_merged.csv")</code></pre>
+
+                    <h3>Data inspection</h3>
+
+                    <b>Inspect data frames and data types</b></br>
+                    <pre><code>glimpse(weight)
+## Rows: 67
+## Columns: 8
+## $ Id             <dbl> 1503960366, 1503960366, 1927972279, 2873212765, 2873212…
+## $ Date           <chr> "5/2/2016 11:59:59 PM", "5/3/2016 11:59:59 PM", "4/13/2…
+## $ WeightKg       <dbl> 52.6, 52.6, 133.5, 56.7, 57.3, 72.4, 72.3, 69.7, 70.3, …
+## $ WeightPounds   <dbl> 115.9631, 115.9631, 294.3171, 125.0021, 126.3249, 159.6…
+## $ Fat            <int> 22, NA, NA, NA, NA, 25, NA, NA, NA, NA, NA, NA, NA, NA,…
+## $ BMI            <dbl> 22.65, 22.65, 47.54, 21.45, 21.69, 27.45, 27.38, 27.25,…
+## $ IsManualReport <chr> "True", "True", "False", "True", "True", "True", "True"…
+## $ LogId          <dbl> 1.462234e+12, 1.462320e+12, 1.460510e+12, 1.461283e+12,…
+
+glimpse(daily_activity)
+## Rows: 940
+## Columns: 15
+## $ Id                       <dbl> 1503960366, 1503960366, 1503960366, 150396036…
+## $ ActivityDate             <chr> "4/12/2016", "4/13/2016", "4/14/2016", "4/15/…
+## $ TotalSteps               <int> 13162, 10735, 10460, 9762, 12669, 9705, 13019…
+## $ TotalDistance            <dbl> 8.50, 6.97, 6.74, 6.28, 8.16, 6.48, 8.59, 9.8…
+## $ TrackerDistance          <dbl> 8.50, 6.97, 6.74, 6.28, 8.16, 6.48, 8.59, 9.8…
+## $ LoggedActivitiesDistance <dbl> 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …
+## $ VeryActiveDistance       <dbl> 1.88, 1.57, 2.44, 2.14, 2.71, 3.19, 3.25, 3.5…
+## $ ModeratelyActiveDistance <dbl> 0.55, 0.69, 0.40, 1.26, 0.41, 0.78, 0.64, 1.3…
+## $ LightActiveDistance      <dbl> 6.06, 4.71, 3.91, 2.83, 5.04, 2.51, 4.71, 5.0…
+## $ SedentaryActiveDistance  <dbl> 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …
+## $ VeryActiveMinutes        <int> 25, 21, 30, 29, 36, 38, 42, 50, 28, 19, 66, 4…
+## $ FairlyActiveMinutes      <int> 13, 19, 11, 34, 10, 20, 16, 31, 12, 8, 27, 21…
+## $ LightlyActiveMinutes     <int> 328, 217, 181, 209, 221, 164, 233, 264, 205, …
+## $ SedentaryMinutes         <int> 728, 776, 1218, 726, 773, 539, 1149, 775, 818…
+## $ Calories                 <int> 1985, 1797, 1776, 1745, 1863, 1728, 1921, 203…
+
+glimpse(hour_intensity)
+## Rows: 22,099
+## Columns: 4
+## $ Id               <dbl> 1503960366, 1503960366, 1503960366, 1503960366, 15039…
+## $ ActivityHour     <chr> "4/12/2016 12:00:00 AM", "4/12/2016 1:00:00 AM", "4/1…
+## $ TotalIntensity   <int> 20, 8, 7, 0, 0, 0, 0, 0, 13, 30, 29, 12, 11, 6, 36, 5…
+## $ AverageIntensity <dbl> 0.333333, 0.133333, 0.116667, 0.000000, 0.000000, 0.0…</code></pre>
+
+                    <b>Count distinct participants</b></br>
+                    <pre><code>n_distinct(weight$Id)
+## [1] 8
+
+n_distinct(daily_activity$Id)
+## [1] 33
+
+n_distinct(hour_intensity$Id)
+## [1] 33</code></pre>
+                    <p>Using participant Id as the primary key, <b>8 distinct entries</b> are identified in the weight
+                        data frame while <b>33 distinct entries</b> are identified in both daily_activity and
+                        hour_intensity data frames.</p>
+                    <h3>Data cleaning and transformation</h3>
+
+                    <b>Clean and rename column names</b></br>
+                    <pre><code>weight <- clean_names(weight) %>% 
+    rename("datetime" = "date") %>%
+    rename("weight_lb" = "weight_pounds")
+daily_activity <- clean_names(daily_activity) %>% 
+    rename("date" = "activity_date")
+hour_intensity <- clean_names(hour_intensity) %>% 
+    rename("datetime" = "activity_hour")</code></pre>
+
+                    <b>Format date and time columns</b></br>
+                    <pre><code>weight$datetime <- mdy_hms(weight$datetime)
+weight$time <- format(as.POSIXct(weight$datetime),format = "%H:%M:%S")
+weight$date <- as.Date(weight$datetime)
+                                        
+daily_activity$date<- mdy(daily_activity$date)
+                                        
+hour_intensity$datetime <- mdy_hms(hour_intensity$datetime)
+hour_intensity$time <- format(as.POSIXct(hour_intensity$datetime),format = "%H:%M:%S")
+hour_intensity$date <- as.Date(hour_intensity$datetime)
+hour_intensity$day <- weekdays(as.Date(hour_intensity$date))
+
+weight <- weight %>% select(-c(datetime))
+hour_intensity <- hour_intensity %>% select(-c(datetime))</code></pre>
+
+                    <b>Rearrange columns</b></br>
+                    <pre><code>weight <- weight[, c(1, 9, 8, 2, 3, 4, 5, 6, 7)]
+hour_intensity <- hour_intensity[, c(1, 5, 6, 4, 2, 3)]</code></pre>
+
+                    <b>Filter out columns in daily_activity</b></br>
+                    <pre><code>daily_activity_mins <- daily_activity %>%
+    select(-c(total_steps,total_distance,tracker_distance,logged_activities_distance,very_active_distance,
+    moderately_active_distance,light_active_distance,sedentary_active_distance,calories))</code></pre>
+
+                    <b>Inspect for duplicate rows</b></br>
+                    <pre><code>weight %>% get_dupes(id,date,time)
+## No duplicate combinations found of: id, date, time
+##  [1] id               date             time             dupe_count      
+##  [5] weight_kg        weight_lb        fat              bmi             
+##  [9] is_manual_report log_id          
+## <0 rows> (or 0-length row.names)
+
+daily_activity_mins %>% get_dupes(id,date)
+## No duplicate combinations found of: id, date
+## [1] id                     date                   dupe_count            
+## [4] very_active_minutes    fairly_active_minutes  lightly_active_minutes
+## [7] sedentary_minutes     
+## <0 rows> (or 0-length row.names)
+
+hour_intensity %>% get_dupes(id,date,time)
+## No duplicate combinations found of: id, date, time
+## [1] id                date              time              dupe_count       
+## [5] day               total_intensity   average_intensity
+## <0 rows> (or 0-length row.names)</code></pre>
+
+                    <hr class="major" />
+
+                    <h2>Analyze</h2>
+                    <h3>Data summary</h3>
+                    <b>Find number of minutes spent active vs. sedentary daily</b></br>
+                    <pre><code>daily_activity_mins <- daily_activity_mins %>%
+mutate(total_active_minutes = very_active_minutes + fairly_active_minutes + lightly_active_minutes)</code></pre>
+
+                    <b>Average the number of active and sedentary minutes of each participant</b></br>
+                    <pre><code>activity_mins_avg <- aggregate(cbind(lightly_active_minutes,fairly_active_minutes,
+                                    very_active_minutes,total_active_minutes,sedentary_minutes) ~ id,
+data = daily_activity_mins, FUN = function(x) {round(mean(x))}) %>%
+    mutate(all_minutes=total_active_minutes + sedentary_minutes)</code></pre>
+
+                    <b>Express minutes spent active vs. sedentary as percentage</b>
+                    <pre><code>total_mins <- data.frame(activity=c("lightly active","fairly active", 
+                                    "very active", "sedentary"),
+
+minutes = c(sum(activity_mins_avg$lightly_active_minutes),
+    sum(activity_mins_avg$fairly_active_minutes),
+    sum(activity_mins_avg$very_active_minutes),
+    sum(activity_mins_avg$sedentary_minutes)))
+
+total_mins <- total_mins %>% mutate(percentage= round(minutes/sum(minutes)*100, 2)) %>% arrange(desc(percentage))
+
+total_mins
+
+##         activity minutes percentage
+## 1      sedentary   32969      81.61
+## 2 lightly active    6318      15.64
+## 3    very active     672       1.66
+## 4  fairly active     437       1.08</code></pre>
+
+                    <p>From the results, it can be seen that <b>most participants in the data set are sedentary</b>.</p>
+
+                    <b>Find when users are most active</b>
+                    <pre><code>intensity_avg <- aggregate(hour_intensity$average_intensity, 
+by = list(time=hour_intensity$time, day=hour_intensity$day),FUN = function(x){round(mean(x),2)}) %>% 
+    rename("average_intensity"="x") %>% rrange(desc(average_intensity))
+
+top_n(intensity_avg, 5, average_intensity)
+
+##       time       day average_intensity
+## 1 13:00:00  Saturday              0.49
+## 2 17:00:00 Wednesday              0.44
+## 3 18:00:00 Wednesday              0.42
+## 4 19:00:00    Friday              0.40
+## 5 18:00:00    Monday              0.40
+## 6 12:00:00  Saturday              0.40</code></pre>
+
+                    <p>Based from the data, users engage most in intense physical activity <b>on Saturday afternoons at
+                            1 PM.</b>.</p>
+
+                    <b>Find recommended average daily water intake based on average weight</b>
+                    <p>Weight is an important factor in determining the average daily water intake. The following <a
+                            href="https://www.umsystem.edu/totalrewards/wellness/how-to-calculate-how-much-water-you-should-drink" target = "_blank">formulas</a>
+                        were used to compute for the average water intake based on the average weight of the
+                        participants.</p>
+                    <p><i>Without factoring in physical activity</i>: Amount of water intake per day (oz.) = Weight
+                        (lbs.) x 0.5</p>
+                    <p><i>Factoring in physical activity</i>: Amount of water intake per day (oz.) = Weight (lbs.) x 0.5
+                        + (mins. of exercise/30 mins. x 12 oz.)</p>
+                    <b>Find average weight of each participant</b>
+                    <pre><code>weight_avg <- aggregate(cbind(weight_kg,weight_lb) ~ id,
+data = weight, FUN = function(x) {round(mean(x),2)})
+                
+weight_avg
+##           id weight_kg weight_lb
+## 1 1503960366     52.60    115.96
+## 2 1927972279    133.50    294.32
+## 3 2873212765     57.00    125.66
+## 4 4319703577     72.35    159.50
+## 5 4558609924     69.64    153.53
+## 6 5577150313     90.70    199.96
+## 7 6962181067     61.55    135.70
+## 8 8877689391     85.15    187.71</code></pre>
+
+                    <b>Find recommended daily average water intake</b>
+                    <pre><code>sedentary_avg_water_mL = round((mean(weight_avg$weight_lb)*0.5*29.5735),2)
+active_avg_water_mL = round(((mean(weight_avg$weight_lb)*0.5 + 30*0.4)*29.5735),2)
+                                        
+sedentary_avg_water_mL
+## [1] 2536.56
+
+active_avg_water_mL
+## [1] 2891.44</code></pre>
+                    <p>The recommended daily water intake based on the average weight of the participants is <b>between
+                            2.5 - 2.9 liters of water</b>.</p>
+
+                    <b>Find number of Spring bottles to drink daily based on recommended average water intake</b>
+                    <pre><code>sedentary_bottles = round((sedentary_avg_water_mL/473),2)
+active_bottles = round((active_avg_water_mL/473),2)
+                                        
+sedentary_bottles
+## [1] 5.36
+
+active_bottles
+## [1] 6.11</code></pre>
+                    <p>The Bellabeat Spring bottle can hold 16 fl.oz. or 473 mL of drinking water. Expressing the
+                        recommended daily water intake in terms of number of Spring bottles, participants should drink
+                        <b>around 5-6 bottles daily</b>.
+                    </p>
+
+                    <h3>Findings</h3>
+                    <p>The following are the insights gained based on the results of the data analysis:</p>
+                    <ol>
+                        <li>Most of the participants in the data set live a sedentary lifestyle. 81.61% of participants
+                            are physically inactive throughout the day.</li>
+                        <li>On average, participants engage in the most intense physical activities during Saturdays at
+                            1 PM. Based on top findings, participants are most active on afternoons and early in the
+                            evening during Monday, Wednesday, Friday, and Saturday.</li>
+                        <li>From the average weight of the participants, around 2.5 liters of water should be consumed
+                            daily. If factoring in 30 minutes of physical activity throughout the day, almost half a
+                            liter should be added in (2.9 liters). Expressing these quantities as number of Spring
+                            bottles, around 5-6 bottles should be consumed on a daily basis.</li>
+                    </ol>
+
+                    <hr class="major" />
+
+                    <h2>Share</h2>
+                    <b>Distribution of time spent being active vs. sedentary throughout the day</b>
+                    <pre><code>ggplot(total_mins,aes(percentage, activity, fill=activity)) +
+geom_bar(stat="identity", position='dodge', width=.5) +
+scale_fill_manual(values=c("#FF85A8","#FFBCDF","#EF907C","#C34F74")) +
+scale_y_discrete(limits = c("sedentary", "lightly active", "fairly active", "very active")) +
+                                        
+ggtitle("Are users sedentary or physically active?",
+subtitle = "Distribution of time spent being active vs. sedentary throughout the day") +
+xlab("Percentage (%)") + ylab("Intensity") +
+geom_text(aes(label=paste0(percentage, " %")), hjust=.5, vjust=1.5, size=4, angle=90) +
+                                      
+theme(legend.position='none')</code></pre>
+
+                    <span class="image"><img src="images/mins.png" alt="" /></span></br></br>
+
+                    <b>Intensity of physical activity throughout the day and week</b>
+                    <pre><code>ggplot(intensity_avg, aes(time, day, fill=average_intensity)) +
+geom_tile(color = "white",lwd = 1,linetype = 1) + 
+scale_fill_gradient2(low = "white", mid = "#EDE9D0", high = "#C34F74") +
+scale_x_discrete(guide = guide_axis(angle = 90)) +
+scale_y_discrete(limits = c("Saturday", "Friday", "Thursday", "Wednesday", "Tuesday", "Monday", "Sunday")) +
+                                        
+ggtitle("When are users most active?", subtitle = "Intensity of physical activity throughout the day and week")+
+xlab("Hour") + ylab("Weekday") +
+guides(fill = guide_colourbar(title = "Average intensity")) +
+                                        
+coord_fixed()</code></pre>
+
+                    <span class="image"><img src="images/week.png" alt="" /></span></br></br>
+
+                    <b>Recommended daily water intake expressed as number of Spring bottles</b>
+                    <pre><code>ggplot(water_intake, aes(water_intake_mL, activity, fill=activity)) +
+geom_bar(stat="identity", position='dodge', width=.5) + 
+scale_fill_manual(values=c("#C34F74","#EF907C")) +
+scale_y_discrete(limits = c("Sedentary", "Active")) +
+                                        
+ggtitle("How many Spring bottles should users drink in a day?",
+subtitle = "Recommended daily water intake* expressed as number of Spring bottles") +
+xlab("Volume of water intake (mL)") + ylab("Intensity") +
+                                        
+geom_text(aes(label=paste0(num_spring_bottles, " bottles")), hjust=0.5, vjust=1.5, size=4, angle=90) +
+labs(caption = "*Recommended water intake when active is calculated given 30 minutes of daily physical activity") +
+theme(plot.caption = element_text(size=8, face="italic")) + theme(legend.position='none') +
+                                        
+geom_vline(xintercept=473, color="#ebebeb", linewidth=2) +
+geom_vline(xintercept=946, color="#ebebeb", linewidth=2) +
+geom_vline(xintercept=1419, color="#ebebeb", linewidth=2) +
+geom_vline(xintercept=1419, color="#ebebeb", linewidth=2) +
+geom_vline(xintercept=1892, color="#ebebeb", linewidth=2) +
+geom_vline(xintercept=2365, color="#ebebeb", linewidth=2) +
+geom_vline(xintercept=2838, color="#ebebeb", linewidth=2)</code></pre>
+
+                    <span class="image"><img src="images/water.png" alt="" /></span></br></br>
+
+                    <hr class="major" />
+
+                    <h2>Act</h2>
+                    <h3>Recommendations</h3>
+                    <p>Based on the findings of my analysis, I listed marketing strategies and practices that Bellabeat
+                        stakeholders can consider. The recommendations listed below are mostly digital marketing
+                        strategies since the company has extensively built their online presence. In addition to this, I
+                        have also listed notes on possible product improvement and future analysis efforts.</p>
+
+                    <b>Bellabeat marketing strategy</b>
+                    <ol>
+                        <li>It is a concerning fact that most of the participants in the data set live a sedentary
+                            lifestyle. The marketing team can effectively advertise the importance of their products by
+                            putting an emphasis on the findings gained from this case study. The following are specific
+                            steps they can do:
+                            <ul>
+                                <li>Launch an awareness campaign on their online platforms about the importance of
+                                    living an active lifestyle. Highlight the findings from this case study and include
+                                    how Bellabeat products can help by monitoring daily physical activity.</li>
+                                <li>Using the Bellabeat app and Leaf tracker, the company can specifically target users
+                                    who are sedentary and encourage them to be more active through customized reminders
+                                    or advertising.</li>
+                            </ul>
+                        </li>
+                        <li>The stakeholders can now consider the insights gained from the time and day users are
+                            engaging in more intense physical activities in their marketing strategies. The following
+                            can be considered:
+                            <ul>
+                                <li>Users are most likely to use their products when they are engaging in physical
+                                    activity. The team can consider to put out more advertising on their online
+                                    platforms or in their Bellabeat application during these times.</li>
+                                <li>The team can put out more exercise-related notifications like hydration during times
+                                    of frequent and intense physical activity.</li>
+                            </ul>
+                        </li>
+                        <li>Putting the recommended average water intake into consideration, the team can implement ways
+                            to encourage users to hydrate. For example:
+                            <ul>
+                                <li>An online ad campaign that visualizes how many Spring bottles they should consume on
+                                    average daily can help users understand better the quantity of water that they
+                                    should be drinking.</li>
+                                <li>The team can design customized hydration goals in their application based on the
+                                    weight and physical activity profile of users. Using the tracking capabilities of
+                                    the Spring bottle, the team can use positive reinforcement by giving out rewards
+                                    like shop vouchers to users who are consistently meeting their hydration goals.</li>
+                                <li>The stakeholders might consider launching larger Spring bottle sizes given the
+                                    findings from the analysis. Users might consider a larger bottle size given the fact
+                                    that they might refill their current Spring bottles multiple times throughout the
+                                    day.</li>
+                            </ul>
+                        </li>
+                    </ol>
+
+                    <b>Future analysis</b>
+                    <ol>
+                        <li>Using company data taken from actual Bellabeat products for future analysis efforts is
+                            recommended.</li>
+                        <li>Insights gained from the average weight of users might be inaccurate due to a small sample
+                            size. Also, other information such as age and gender should be considered given that
+                            company’s products are targeted for women. It can be helpful to consider other data sources
+                            that provide more information about users’ profiles.</li>
+                        <li>Including data about water intake from Spring bottles can be useful for future analysis.
+                        </li>
+                    </ol>
+
+                    <p><a
+                            href="https://www.coursera.org/account/accomplishments/specialization/certificate/5YGYZAEWNTFP" target = "_blank">Link</a>
+                        to my Google Data Analytics Certificate</p>
+                </section>
+
+            </div>
+        </div>
+
+        <!-- Sidebar -->
+        <div id="sidebar">
+            <div class="inner">
+
+                <!-- Section -->
+                <section>
+                    <span class="image fit"><img src="images/banner.png" alt="" /></span>
+                </section>
+
+                <!-- Menu -->
+                <nav id="menu">
+                    <header class="major">
+                        <h2>Menu</h2>
+                    </header>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li>
+                            <span class="opener">Projects</span>
+                            <ul>
+								<li><a href="telecom.html">Telecom Customer Churn</a></li>
+								<li><a href="supply.html">Supply Chain Distribution</a></li>
+								<li><a href="food.html">PH Food Prices</a></li>
+								<li><a href="bellabeat.html">Bellabeat Case Study</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+
+                <!-- Section -->
+                <section>
+                    <header class="major">
+                        <h2>Contact Me</h2>
+                    </header>
+                    <ul class="contact">
+                        <li class="icon solid fa-envelope"><a
+                                href="mailto:andreamayaguilar@gmail.com">andreamayaguilar@gmail.com</a></li>
+                        <li class="icon solid fa-phone">(+63)916-658-0717</li>
+                        <li class="icon solid fa-home">Iriga City, Camarines Sur, 4431</li>
+                    </ul>
+                </section>
+
+                <!-- Footer -->
+                <footer id="footer">
+                    <p class="copyright">&copy; All rights reserved. Design: <a href="https://html5up.net" target = "_blank">HTML5 UP</a>.
+                    </p>
+                </footer>
+
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
